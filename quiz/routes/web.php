@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/quiz', [\App\Http\Controllers\QuizController::class, 'start']);
+Route::post('/quiz/question1', [\App\Http\Controllers\QuizController::class, 'question1']);
+Route::post('/quiz/question2', [\App\Http\Controllers\QuizController::class, 'question2']);
+Route::post('/quiz/question3', [\App\Http\Controllers\QuizController::class, 'question3']);
+Route::post('/quiz/question4', [\App\Http\Controllers\QuizController::class, 'question4']);
+Route::post('/quiz/question5', [\App\Http\Controllers\QuizController::class, 'question5']);
+Route::post('/quiz/finish', [\App\Http\Controllers\QuizController::class, 'finish']);
